@@ -1,0 +1,60 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Register | SKlee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}" />
+</head>
+<body>
+    <!-- Moved logo OUTSIDE container and above form -->
+    <div class="logo">
+        <span class="sk">sk</span><span class="lee">lee</span>
+    </div>
+
+    <div class="register-wrapper">
+        <div class="register-title">Create a SKlee Account</div>
+        <div class="sub-title">It's easy and fast.</div>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+
+            {{ form.username(placeholder='Username', class_='error' if form.username.errors else '') }}
+            {% for error in form.username.errors %}
+                <div class="error-text">{{ error }}</div>
+            {% endfor %}
+
+            {{ form.email(placeholder='Email', class_='error' if form.email.errors else '') }}
+            {% for error in form.email.errors %}
+                <div class="error-text">{{ error }}</div>
+            {% endfor %}
+
+            {{ form.dob(placeholder='Date of Birth', class_='error' if form.dob.errors else '') }}
+            {% for error in form.dob.errors %}
+                <div class="error-text">{{ error }}</div>
+            {% endfor %}
+
+            {{ form.phone(placeholder='Phone (+234XXXXXXXXXX)', class_='error' if form.phone.errors else '') }}
+            {% for error in form.phone.errors %}
+                <div class="error-text">{{ error }}</div>
+            {% endfor %}
+
+            {{ form.password(placeholder='Password', class_='error' if form.password.errors else '') }}
+            {% for error in form.password.errors %}
+                <div class="error-text">{{ error }}</div>
+            {% endfor %}
+
+            {{ form.confirm_password(placeholder='Retype Password', class_='error' if form.confirm_password.errors else '') }}
+            {% for error in form.confirm_password.errors %}
+                <div class="error-text">{{ error }}</div>
+            {% endfor %}
+
+            <!-- Override button text here -->
+            {{ form.submit(class_='submit-btn', value='Submit') }}
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="{{ url_for('login') }}">Login</a>
+        </div>
+    </div>
+</body>
+</html>

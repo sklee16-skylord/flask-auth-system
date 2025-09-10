@@ -1,0 +1,47 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SKlee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login-wrapper">
+        <!-- Left Logo Section -->
+        <div class="logo-section">
+            <img src="{{ url_for('static', filename='sklee_logo.png') }}" alt="SKlee Logo">
+        </div>
+
+        <!-- Right Login Form Section -->
+        <div class="form-container">
+            <h2>Login to SKlee</h2>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <p class="flash {{ category }}">{{ message }}</p>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                <label>{{ form.username_or_email.label }}</label>
+                {{ form.username_or_email(class_="form-control", placeholder="Username or Email") }}
+
+                <label>{{ form.password.label }}</label>
+                {{ form.password(class_="form-control", placeholder="Password") }}
+
+                {{ form.submit(class_="btn") }}
+
+                <div class="links">
+                    <a href="{{ url_for('register') }}">Register</a> |
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
