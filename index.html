@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SKlee</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-wrapper">
+        <!-- Left Logo Section -->
+        <div class="logo-section">
+            <img src="assets/sklee_logo.png" alt="SKlee Logo">
+        </div>
+
+        <!-- Right Login Form Section -->
+        <div class="form-container">
+            <h2>Login to SKlee</h2>
+
+            <!-- Flash messages placeholder (static version) -->
+            <div class="flash-messages">
+                <!-- This would be populated by Flask in a real application -->
+                <!-- <p class="flash success">Registration successful!</p> -->
+                <!-- <p class="flash danger">Invalid credentials</p> -->
+            </div>
+
+            <form method="POST" action="#">
+                <!-- CSRF token would go here in Flask -->
+
+                <label for="username_or_email">Username or Email</label>
+                <input type="text" id="username_or_email" name="username_or_email" class="form-control" placeholder="Username or Email">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+
+                <button type="submit" class="btn">Login</button>
+
+                <div class="links">
+                    <a href="register.html">Register</a> |
+                    <a href="#">Forgot Password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

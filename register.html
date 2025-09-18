@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Register | SKlee</title>
+    <link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+    <!-- Moved logo OUTSIDE container and above form -->
+    <div class="logo">
+        <span class="sk">sk</span><span class="lee">lee</span>
+    </div>
+
+    <div class="register-wrapper">
+        <div class="register-title">Create a SKlee Account</div>
+        <div class="sub-title">It's easy and fast.</div>
+        <form method="POST" action="#">
+            <!-- CSRF token would go here in Flask -->
+
+            <input type="text" name="username" placeholder="Username" class="">
+            <div class="error-text"></div>
+
+            <input type="email" name="email" placeholder="Email" class="">
+            <div class="error-text"></div>
+
+            <input type="date" name="dob" placeholder="Date of Birth" class="">
+            <div class="error-text"></div>
+
+            <input type="tel" name="phone" placeholder="Phone (+234XXXXXXXXXX)" class="">
+            <div class="error-text"></div>
+
+            <input type="password" name="password" placeholder="Password" class="">
+            <div class="error-text"></div>
+
+            <input type="password" name="confirm_password" placeholder="Retype Password" class="">
+            <div class="error-text"></div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="index.html">Login</a>
+        </div>
+    </div>
+</body>
+</html>

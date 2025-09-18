@@ -1,0 +1,46 @@
+<!-- templates/register_success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered</title>
+    <style>
+        body {
+            background-color: #f3f3f3;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .success-box {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .success-box h2 {
+            color: green;
+        }
+
+        .success-box a {
+            display: inline-block;
+            margin-top: 20px;
+            background: #1877f2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-box">
+        <h2>Submitted Successfully!</h2>
+        <a href="{{ url_for('login') }}">Okay</a>
+    </div>
+</body>
+</html>
